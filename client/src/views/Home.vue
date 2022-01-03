@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <img :alt="alt" :src="logo" class="vue-logo" />
-    <h1>vue-notion-render</h1>
     <button type="button" v-on:click="getNotionData" v-if="!loading">
       {{ pages ? "Reload" : "Load my notion pages" }}
     </button>

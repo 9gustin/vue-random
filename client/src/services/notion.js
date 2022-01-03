@@ -1,4 +1,4 @@
-const makeRequest = (url) => {
+const makeRequest = async url => {
   const response = await fetch(`${process.env.VUE_APP_API_URL}/notion/${url}`);
   const json = await response.json();
 

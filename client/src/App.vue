@@ -1,30 +1,25 @@
 <template>
   <div id="app">
+    <img :alt="alt" :src="logo" class="vue-logo" />
     <h1>vue-notion-render</h1>
-    <button type="button" v-on:click="getNotionData">Get notion data</button>
+    <div id="nav">
+      <router-link to="/">Home</router-link>
+      <router-link to="/detail">Detail</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import logo from "./assets/logo.png";
 
 export default {
   name: "App",
-  components: {
-    HelloWorld,
-  },
   data: function () {
     return {
       logo,
-      alt: "Vue logo",
-      message: "Hello, World!",
+      alt: "Vue logo"
     };
-  },
-  methods: {
-    getNotionData() {
-      console.log('a')
-    },
   },
 };
 </script>

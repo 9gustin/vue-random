@@ -9,7 +9,6 @@
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
 import logo from "./assets/logo.png";
-import notion from "./services/notion.js";
 
 export default {
   name: "App",
@@ -25,11 +24,7 @@ export default {
   },
   methods: {
     getNotionData() {
-      notion.databases
-        .query({
-          database_id: process.env.VUE_APP_NOTION_DATABASE,
-        })
-        .then(console.log);
+      console.log('a')
     },
   },
 };

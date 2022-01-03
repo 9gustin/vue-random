@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img :alt="alt" :src="logo" />
-    <HelloWorld :msg="message" />
+    <h1>vue-notion-render</h1>
     <button type="button" v-on:click="getNotionData">Get notion data</button>
   </div>
 </template>

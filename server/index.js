@@ -10,7 +10,7 @@ app.use(cors())
 
 app.get('/test', (req, res) => {
   res.status(200).send({
-    a: 'a'
+    a: 'aaaaaaaa'
   })
 })
 

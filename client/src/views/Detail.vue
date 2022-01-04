@@ -1,5 +1,12 @@
 <template>
   <div>
-    Detail page
+    Detail page: {{id}}
+    <router-link to="/">Go back</router-link>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["id"]
+}
+</script>

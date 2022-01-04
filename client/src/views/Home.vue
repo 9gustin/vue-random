@@ -8,9 +8,7 @@
     <ul v-else-if="pages" class="pages">
       <li v-for="page in pages" :key="page.id">
         {{ page.properties.Name.title[0].plain_text }}
-        <button type="button" v-on:click="viewDetail(page.id)">
-          View detail
-        </button>
+        <router-link :to="{name: 'detail', params: {id: page.id}}">Detail</router-link>
       </li>
     </ul>
     <div v-else>No data :(</div>

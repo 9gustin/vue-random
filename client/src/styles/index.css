@@ -1,0 +1,29 @@
+:root {
+  --bg-color: #35495E;
+  --text-color: #fff;
+  --theme-color: #41b883;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  margin-top: 60px;
+}
+
+button {
+  padding: 10px;
+  background-color: #41b883;
+  border: none;
+}
+
+:any-link {
+  color: var(--theme-color);
+}

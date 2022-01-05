@@ -25,9 +25,12 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
     overflow: hidden;
     padding-bottom: 15px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
     width: var(--width);
   }
   .nav > .brand {

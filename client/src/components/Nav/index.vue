@@ -1,6 +1,6 @@
 <template>
   <nav class="nav">
-    <h1 class="brand">vnr</h1>
+    <router-link to="/" class="brand">vnr</router-link>
     <ThemeChange />
   </nav>
 </template>
@@ -36,8 +36,10 @@ export default {
     border-radius: 0 20px 20px 0;
     color: #fff;
     display: flex;
+    font-size: 1.5rem;
     justify-content: center;
-    padding: 10px 0;
     min-height: var(--width);
+    padding: 10px 0;
+    text-decoration: none;
   }
 </style>

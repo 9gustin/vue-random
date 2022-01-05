@@ -1,7 +1,14 @@
 :root {
   --bg-color: #35495E;
+  --bg-dark-color: #293949;
   --text-color: #fff;
   --theme-color: #41b883;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -9,20 +16,18 @@ html, body {
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: var(--bg-dark-color);
   color: var(--text-color);
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  margin-top: 60px;
 }
 
-button {
+/* button {
   padding: 10px;
   background-color: #41b883;
   border: none;
-}
+} */
 
 :any-link {
   color: var(--theme-color);

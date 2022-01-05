@@ -1,5 +1,8 @@
 # vue-random
 
+IDEA: https://www.frontendmentor.io/challenges/invoice-app-i7KaLTQjl
+Icons: https://feathericons.com/
+
 ## Project setup
 ```
 npm install
@@ -19,6 +22,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

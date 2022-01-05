@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <button type="button" v-on:click="getNotionData" v-if="!loading">
       {{ pages ? "Reload" : "Load my notion pages" }}
     </button>
@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .vue-logo {
   height: 100px;
 }

@@ -1,21 +1,16 @@
 <template>
-  <div id="app">
-    <img :alt="alt" :src="logo" class="vue-logo" />
-    <h1>vue-notion-render</h1>
-    <router-view/>
-  </div>
+  <Layout>
+    <router-view />
+  </Layout>
 </template>
 
 <script>
-import logo from "./assets/logo.png";
+import Layout from "./components/Layout.vue";
 
 export default {
   name: "App",
-  data: function () {
-    return {
-      logo,
-      alt: "Vue logo"
-    };
-  },
+  components: {
+    Layout
+  }
 };
 </script>

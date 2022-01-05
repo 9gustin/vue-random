@@ -16,10 +16,18 @@ export default {
       type: Number,
       default: 24,
     },
+    color: {
+      type: String,
+      default: '#41b883'
+    },
   },
   computed: {
     iconSVG() {
-      return feather.icons[this.name].toSvg({ class: "icon", width: this.size, height: this.size });
+      return feather.icons[this.name].toSvg({
+        color: this.color,
+        width: this.size,
+        height: this.size,
+      });
     },
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <button type="button" @click="toggleTheme">
+  <button class="theme-change" type="button" @click="toggleTheme">
     <BaseIcon :name="icon"/>
   </button>
 </template>
@@ -19,3 +19,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+  .theme-change {
+    background-color: transparent;
+    border: none;
+  }
+</style>

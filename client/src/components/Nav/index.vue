@@ -27,6 +27,7 @@ export default {
     justify-content: space-between;
     height: 100%;
     overflow: hidden;
+    padding-bottom: 15px;
     width: var(--width);
   }
   .nav > .brand {

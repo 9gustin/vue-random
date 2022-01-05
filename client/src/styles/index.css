@@ -5,6 +5,12 @@
   --theme-color: #41b883;
 }
 
+body.light {
+  --bg-color: #293949;
+  --bg-dark-color: #e0e0e0;
+  --text-color: #222;
+}
+
 * {
   padding: 0;
   margin: 0;

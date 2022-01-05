@@ -18,10 +18,12 @@ export default new Vuex.Store({
     SET_DARK_THEME(state) {
       state.theme = THEMES.dark
       localStorage.setItem(THEME_KEY, THEMES.dark)
+      document.body.classList.remove('light')
     },
     SET_LIGHT_THEME(state) {
       state.theme = THEMES.light
       localStorage.setItem(THEME_KEY, THEMES.light)
+      document.body.classList.add('light')
     }
   },
   actions: {

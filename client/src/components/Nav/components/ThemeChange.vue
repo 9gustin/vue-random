@@ -23,5 +23,6 @@ export default {
   .theme-change {
     background-color: transparent;
     border: none;
+    cursor: pointer;
   }
 </style>

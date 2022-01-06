@@ -13,10 +13,10 @@ const THEME_KEY = "theme";
 export default new Vuex.Store({
   state: {
     theme:
-      localStorage.getItem(THEME_KEY) ||
-      window.matchMedia("(prefers-color-scheme: dark)").matches
+      localStorage.getItem(THEME_KEY) ??
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
         ? THEMES.dark
-        : THEMES.light,
+        : THEMES.light),
   },
   mutations: {
     SET_DARK_THEME(state) {

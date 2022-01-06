@@ -11,7 +11,7 @@ export default {
   name: "ThemeChange",
   computed: {
     icon() {
-      return this.$store.getters.isDarkTheme ? "moon" : "sun";
+      return this.$store.getters.isDarkTheme ?  "sun" : "moon";
     },
   },
   methods: {

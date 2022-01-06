@@ -1,5 +1,5 @@
 <template>
-  <Container :title="page.title" :loading="loading">
+  <Container :title="page ? page.data.title : ''" :loading="loading">
     <article v-if="page">
       <Render :blocks="page.blocks"/>
     </article>
@@ -12,6 +12,7 @@
 import Render from '../components/Render.vue';
 import Container from "../components/Container.vue";
 import { getPage, getBlocks } from '../services/notion';
+import { getPageFields } from '../utils/getPageFields';
 
 export default {
   props: ["id"],
@@ -26,8 +27,10 @@ export default {
     };
   },
   async created() {
-    this.page = await getPage(this.id);
-    this.page.title = this.page.properties.Name.title[0].plain_text;
+    const pageData = await getPage(this.id);
+    pageData.data = getPageFields(pageData);
+
+    this.page = pageData;
     this.page.blocks = await getBlocks(this.id);
 
     this.loading = false;

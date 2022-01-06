@@ -4,16 +4,36 @@
       :to="{ name: 'detail', params: { id: article.id } }"
       class="link"
     >
-      {{ article.properties.Name.title[0].plain_text }}
+      <div class="title">
+        {{ pageData.title }}
+        <span>Oct 19, 2021</span>
+      </div>
+      <Tags :tags="tags" />
     </router-link>
   </li>
 </template>
 
 <script>
+import Tags from "./Tags.vue";
+import { getPageFields } from "../../../utils/getPageFields.js";
+
 export default {
   name: "Article",
   props: {
     article: Object,
+  },
+  components: {
+    Tags,
+  },
+  data() {
+    return {
+      tags: ["tag1", "tag2", "tag3"],
+    };
+  },
+  computed: {
+    pageData() {
+      return getPageFields(this.article);
+    },
   },
 };
 </script>
@@ -26,13 +46,13 @@ export default {
   color: var(--text-color);
   display: flex;
   gap: 20px;
+  justify-content: space-between;
   height: 100%;
-  justify-content: center;
   min-height: 70px;
   overflow: hidden;
-  padding: 20px;
+  padding: 0 50px;
   text-decoration: none;
-  transition: all 0.3s;
+  transition: all 0.5s;
   width: 100%;
 }
 
@@ -48,5 +68,15 @@ export default {
   left: 0;
   position: absolute;
   width: 20px;
+}
+.article > .link > .title {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+}
+
+.article > .link > .title > span {
+  color: var(--light-text-color);
+  font-size: 1rem;
 }
 </style>

@@ -2,6 +2,7 @@
   --bg-color: #35495E;
   --bg-dark-color: #293949;
   --text-color: #fff;
+  --light-text-color: #b6b6b6;
   --theme-color: #41b883;
 }
 
@@ -9,6 +10,7 @@ body.light {
   --bg-color: #fff;
   --bg-dark-color: #ebebeb;
   --text-color: #222;
+  --light-text-color: #919191;
 }
 
 * {
@@ -16,6 +18,7 @@ body.light {
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif!important;
   padding: 0;
   margin: 0;
+  line-height: 1.5;
 }
 
 html, body {

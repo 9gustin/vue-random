@@ -6,9 +6,9 @@
     >
       <div class="title">
         {{ pageData.title }}
-        <span>Oct 19, 2021</span>
+        <span>{{pageData.parsedDate}}</span>
       </div>
-      <Tags :tags="tags" />
+      <Tags :tags="pageData.tags" />
     </router-link>
   </li>
 </template>
@@ -24,11 +24,6 @@ export default {
   },
   components: {
     Tags,
-  },
-  data() {
-    return {
-      tags: ["tag1", "tag2", "tag3"],
-    };
   },
   computed: {
     pageData() {

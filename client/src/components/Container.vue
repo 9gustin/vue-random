@@ -24,8 +24,10 @@ export default {
 
 <style scoped>
 .container {
-  max-width: 900px;
+  height: max-content;
   margin: 40px auto 0;
+  max-width: 900px;
+  padding-bottom: 30px;
   width: -webkit-fill-available;
 }
 

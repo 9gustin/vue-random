@@ -5,11 +5,11 @@
       <Tags :tags="page.data.tags"/>
     </div>
     <template>
-      <article v-if="page">
+      <article v-if="page" class="article">
         <Render :blocks="page.blocks"/>
       </article>
 
-      <router-link to="/">Go back</router-link>
+      <router-link to="/" class="go-back"> <BaseIcon name="arrow-left" /> Go back</router-link>
     </template>
   </Container>
 </template>
@@ -51,5 +51,13 @@ export default {
   align-items: center;
   display: flex;
   justify-content: space-between;
+}
+.article {
+  margin: 20px 0;
+}
+.go-back {
+  display: flex;
+  gap: 10px;
+  text-decoration: none;
 }
 </style>

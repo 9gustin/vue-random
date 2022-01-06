@@ -1,25 +1,23 @@
 <template>
-  <div>
-    <p v-if="loading">Loading...</p>
-    <h1 v-else-if="page">
-      {{ page.title }}
-    </h1>
+  <Container :title="page.title" :loading="loading">
     <article v-if="page">
-      <render :blocks="page.blocks"/>
+      <Render :blocks="page.blocks"/>
     </article>
 
     <router-link to="/">Go back</router-link>
-  </div>
+  </Container>
 </template>
 
 <script>
 import Render from '../components/Render.vue';
+import Container from "../components/Container.vue";
 import { getPage, getBlocks } from '../services/notion';
 
 export default {
   props: ["id"],
   components: {
-    Render
+    Render,
+    Container
   },
   data() {
     return {

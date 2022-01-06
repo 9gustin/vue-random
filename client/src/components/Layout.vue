@@ -13,6 +13,11 @@ export default {
   components: {
     Nav,
   },
+  created() {
+    if (this.$store.getters.isLightTheme) {
+      document.body.classList.add('light')
+    }
+  }
 };
 </script>
 

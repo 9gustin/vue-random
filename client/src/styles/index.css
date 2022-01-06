@@ -7,8 +7,8 @@
 }
 
 body.light {
-  --bg-color: #fff;
-  --bg-dark-color: #ebebeb;
+  --bg-color: #efefef;
+  --bg-dark-color: #e0e0e0;
   --text-color: #222;
   --light-text-color: #919191;
 }

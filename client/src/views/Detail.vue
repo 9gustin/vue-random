@@ -1,6 +1,6 @@
 <template>
-  <Container :title="page ? page.data.title : ''" :img="page.data.img" :loading="loading">
-    <div slot="header" class="header-description">
+  <Container :title="page ? page.data.title : ''" :img="page ? page.data.img : ''" :loading="loading">
+    <div slot="header" class="header-description" v-if="page">
       {{page.data.parsedDate}}
       <Tags :tags="page.data.tags"/>
     </div>

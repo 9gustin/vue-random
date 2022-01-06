@@ -1,16 +1,23 @@
 <template>
-  <Container :title="page ? page.data.title : ''" :loading="loading">
-    <article v-if="page">
-      <Render :blocks="page.blocks"/>
-    </article>
+  <Container :title="page ? page.data.title : ''" :img="page.data.img" :loading="loading">
+    <div slot="header" class="header-description">
+      {{page.data.parsedDate}}
+      <Tags :tags="page.data.tags"/>
+    </div>
+    <template>
+      <article v-if="page">
+        <Render :blocks="page.blocks"/>
+      </article>
 
-    <router-link to="/">Go back</router-link>
+      <router-link to="/">Go back</router-link>
+    </template>
   </Container>
 </template>
 
 <script>
 import Render from '../components/Render.vue';
 import Container from "../components/Container.vue";
+import Tags from "../components/Tags.vue";
 import { getPage, getBlocks } from '../services/notion';
 import { getPageFields } from '../utils/getPageFields';
 
@@ -18,7 +25,8 @@ export default {
   props: ["id"],
   components: {
     Render,
-    Container
+    Container,
+    Tags
   },
   data() {
     return {
@@ -37,3 +45,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.header-description {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+</style>

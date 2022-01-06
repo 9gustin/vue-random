@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Tags from "./Tags.vue";
+import Tags from "../../Tags.vue";
 import { getPageFields } from "../../../utils/getPageFields.js";
 
 export default {

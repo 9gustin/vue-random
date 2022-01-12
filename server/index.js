@@ -14,21 +14,35 @@ app.use(cors())
 
 // Example: http://localhost:3000/notion/database
 app.get('/notion/database', async (req, res) => {
-  const result = await getDatabase(process.env.NOTION_DATABASE)
-  
-  res.status(200).json(result)
+  try {
+    const result = await getDatabase(process.env.NOTION_DATABASE)
+    res.status(200).json(result)
+  }
+  catch {
+    res.status(400).send('Bad request')
+  }
 })
 
 // Example: http://localhost:3000/notion/page?pageId=4742cb3b-f845-4f12-b3cb-4edff2a4f517
 app.get('/notion/page', async (req, res) => {
-  const result = await getPage(req.query.pageId)
-  res.status(200).json(result)
+  try {
+    const result = await getPage(req.query.pageId)
+    res.status(200).json(result)
+  }
+  catch {
+    res.status(400).send('Bad request')
+  }
 })
 
 // Example: http://localhost:3000/notion/page/blocks?blockId=4742cb3b-f845-4f12-b3cb-4edff2a4f517
 app.get('/notion/page/blocks', async (req, res) => {
-  const result = await getBlocks(req.query.blockId)
-  res.status(200).json(result)
+  try {
+    const result = await getBlocks(req.query.blockId)
+    res.status(200).json(result)
+  }
+  catch {
+    res.status(400).send('Bad request')
+  }
 })
 
 app.listen(process.env.PORT || 3000)

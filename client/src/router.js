@@ -4,6 +4,7 @@ import NProgress from 'nprogress';
 
 import Home from './views/Home.vue';
 import Detail from './views/Detail.vue';
+import NotFound from './views/NotFound.vue';
 
 import { getPage, getBlocks, getDatabase } from './services/notion';
 import { getPageFields } from './utils/getPageFields';
@@ -29,14 +30,28 @@ const router = new Router({
       component: Detail,
       props: true,
       async beforeEnter(to, from, next) {
-        const pageData = await getPage(to.params.id);
-        pageData.data = getPageFields(pageData);
-        pageData.blocks = await getBlocks(to.params.id);
+        try {
+          const pageData = await getPage(to.params.id);
+          pageData.data = getPageFields(pageData);
+          pageData.blocks = await getBlocks(to.params.id);
+  
+          to.params.page = pageData;
+        }
+        catch {
+          next({name: '404'})
+        }
 
-        to.params.page = pageData;
-
-        next(pageData)
+        next()
       }
+    },
+    {
+      path: '/404',
+      name: '404',
+      component: NotFound
+    },
+    {
+      path: '*',
+      redirect: {name: '404'}
     }
   ]
 });
